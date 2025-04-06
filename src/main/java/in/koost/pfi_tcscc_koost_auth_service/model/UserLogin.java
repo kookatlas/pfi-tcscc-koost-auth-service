@@ -10,7 +10,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table("users_login")
-public class User {
+public class UserLogin {
 
     @Id
     private Integer id;
