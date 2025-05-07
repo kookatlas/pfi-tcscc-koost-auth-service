@@ -1,0 +1,10 @@
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://host.docker.internal:5432/koost
+    username: postgres
+    password: 123456
+    pool:
+      enabled: true
+
+server:
+  port: 8081
