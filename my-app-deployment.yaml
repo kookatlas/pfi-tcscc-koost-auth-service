@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment  # Choose a name for your deployment
+  labels:
+    app: my-app-deployment          # A label to identify your application
+spec:
+  replicas: 2             # Number of desired instances (pods)
+  selector:
+    matchLabels:
+      app: my-app-deployment       # This must match the labels in the pod template
+  template:
+    metadata:
+      labels:
+        app: my-app-deployment       # Labels for your pods
+    spec:
+      containers:
+        - name: my-app-container # A name for your container within the pod
+          image: srinivaskookatla/pfi-tcscc-koost-auth-service:latest # <--- IMPORTANT: Replace this!
+          ports:
+            - containerPort: 8081   # The port your application listens on INSIDE the container
+          # You can also add environment variables, resource limits, volume mounts, etc. here
+          # env:
+          # - name: MY_ENV_VARIABLE
+          #   value: "some_value"
+          # resources:
+          #   limits:
+          #     memory: "128Mi"
+          #     cpu: "500m"
+          #   requests:
+          #     memory: "64Mi"
+          #     cpu: "250m"

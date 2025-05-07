@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service   # Choose a name for your service
+spec:
+  selector:
+    app: my-app-deployment        # This MUST match the 'app' label of your pods (from the Deployment)
+  ports:
+    - protocol: TCP
+      port: 80             # The port the service will be available on WITHIN the cluster
+      targetPort: 8081     # The port your container is listening on (must match containerPort in Deployment)
+  type: LoadBalancer       # Or NodePort, or ClusterIP - see explanation below
+   

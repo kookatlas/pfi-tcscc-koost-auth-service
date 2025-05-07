@@ -1,0 +1,13 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: my-eks-cluster
+  region: ap-south-1 # Or your desired AWS region
+
+nodeGroups:
+  - name: ng-1
+    instanceType: t2.medium
+    desiredCapacity: 2
+    ssh:
+      publicKeyName: eks-keypair # Ensure this key pair exists in your AWS region

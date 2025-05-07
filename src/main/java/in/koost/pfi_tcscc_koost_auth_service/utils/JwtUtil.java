@@ -9,6 +9,10 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
+
+    public JwtUtil() {
+    }
+
     private final String secret = "7VtR8wWNAVIG6mRffOOk31nQ8swAqKwTzuan9GB7vyI="; // use env variable in prod
     private final long expirationMs = 3600000; // 1 hour
 
